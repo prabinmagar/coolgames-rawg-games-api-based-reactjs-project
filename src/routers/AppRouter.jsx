@@ -12,8 +12,6 @@ const AppRouter = () => {
                 <Route path = "/error" element = { <Error />} />
                 <Route path = "/games" element = { <ViewGameAll />} />
                 <Route path = "/games/:gameId" element = {<ViewGameDetails />} />
-                {/* <Route path = "/genres" element = { <ViewGenreList /> } /> */}
-                {/* <Route path = "/genres/:genreName" element = { <ViewGenreGames />} /> */}
                 <Route path = "/stores" element = { <ViewStoreAll /> } />
                 <Route path = "/stores/:storeId" element = { <ViewStoreDetails /> } />
                 <Route path = "/creators" element = { <ViewCreatorAll /> } />

@@ -8,8 +8,8 @@ const StoreItem = ({ storeItem }) => {
             <div className='card-img img-fit-cover'>
                 <img src = { storeItem?.image_background } alt = { storeItem?.id } />
             </div>
-            <div className='card-text bg-white d-flex flex-column justify-content-center'>
-                <h5 className='card-title text-uppercase fw-7 text-uppercase'><Link to = {`stores/${storeItem.id}`}>{ storeItem?.name}</Link></h5>
+            <div className='card-text d-flex flex-column justify-content-center'>
+                <h5 className='card-title text-uppercase fw-7 text-uppercase'><Link className='text-white' to = {`stores/${storeItem.id}`}>{ storeItem?.name}</Link></h5>
                 <ul className='card-info'>
                     <li>
                         <span className='fw-7'>Domain:</span> <a href = { "https://www." + storeItem?.domain}> { storeItem?.domain}</a>
@@ -18,8 +18,8 @@ const StoreItem = ({ storeItem }) => {
                         <span className='fw-7'>Games Count: </span> { storeItem?.games_count }
                     </li>
                 </ul>
-                <p className='fw-7'>Games: </p>
-                <ul className='card-games'>
+                { storeItem?.games && <p className='fw-7 text-white'>Games: </p> } 
+                <ul className='card-games d-flex flex-wrap'>
                     {
                         storeItem?.games?.map(item => {
                             return (
@@ -60,25 +60,35 @@ const StoreItemWrapper = styled.div`
 
         .card-info{
             li{
-                color: #050415;
+                /* color: #050415; */
+                color: #fff;
+
+                a{
+                    color: #fff;
+                }
             }
         }
 
         .card-games{
+            gap: 8px;
             li{
-                color: var(--clr-violet-darker);
-                padding: 6px 12px;
-                margin: 6px 0;
-                background-color: #ededed;
-                box-shadow: rgba(0, 0, 0, 0.02) 0px 1px 3px 0px, rgba(27, 31, 35, 0.15) 0px 0px 0px 1px;
+                background-color: #B9198E;
+                border-radius: 100vh;
+                padding-right: 8px;
+                padding-left: 8px;
+                height: 23px;
 
                 *{
                     font-weight: 500;
                     color: var(--clr-violet-darker);
                 }
 
-                &:hover{
-                    text-decoration: underline;
+                a{
+                    color: var(--clr-white);
+                    font-size: 13px;
+                    display: inline-block;
+                    transform: translateY(-3px);
+                    font-style: italic;
                 }
             }
         }

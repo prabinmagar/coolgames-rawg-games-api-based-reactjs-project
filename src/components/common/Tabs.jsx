@@ -21,7 +21,7 @@ const Tabs = ({ data, sliceValue = data.length}) => {
     <TabsWrapper className='bg-white'>
       <div className='container'>
         <div className='tabs-content'>
-          <ul className={`tabs-buttons bg-white ${tabButtonsStatus ? 'show' : '' }`}>
+          <ul className={`tabs-buttons ${tabButtonsStatus ? 'show' : '' }`}>
             <button type = "button" className='tabs-buttons-close bg-white d-flex align-items-center justify-content-center' onClick={ tabButtonsHandler  }>
               <AiOutlineMenu size = {22} />
             </button>
@@ -30,7 +30,7 @@ const Tabs = ({ data, sliceValue = data.length}) => {
               data.map(item => {
                 return (
                   <li key = {item?.id} className={`tabs-button ${item?.id === activeTab.id ? 'tabs-active' : ""}`}>
-                    <button type = "button" onClick={() => tabClickHandler(item?.id)}>{item?.name}</button>
+                    <button className='text-white' type = "button" onClick={() => tabClickHandler(item?.id)}>{item?.name}</button>
                   </li>
                 )
               })
@@ -63,7 +63,7 @@ const TabsWrapper = styled.div`
     z-index: 99;
     padding-top: 60px;
     padding-bottom: 60px;
-    box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px, rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
+    /* box-shadow: rgba(0, 0, 0, 0.25) 0px 13px 27px -5px, rgba(0, 0, 0, 0.3) 0px 8px 16px -8px; */
     transition: var(--transition-default);
 
     .tabs-buttons-close{
@@ -109,7 +109,7 @@ const TabsWrapper = styled.div`
       font-weight: 500;
       font-size: 18px;
       letter-spacing: 0.1em;
-      border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+      /* border-bottom: 1px solid rgba(255, 255, 255, 0.03); */
       width: 100%;
       text-align: start;
     }

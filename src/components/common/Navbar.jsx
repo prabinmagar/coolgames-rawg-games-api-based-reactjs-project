@@ -132,6 +132,7 @@ const NavbarWrapper = styled.div`
     text-align: center;
     transform: translateX(100%);
     transition: var(--transition-default);
+    z-index: 999;
 
     &.show{
       transform: translateX(0);

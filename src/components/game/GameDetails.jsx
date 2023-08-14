@@ -13,6 +13,8 @@ const GameDetails = ({ gameData }) => {
   let genres = gameData?.genres?.map(genre => genre.name);
   let publishers = gameData?.publishers?.map(publisher => publisher.name);
 
+  console.log(gameData);
+
   return (
     <GameDetailsWrapper>
       <div className='details-title'>
